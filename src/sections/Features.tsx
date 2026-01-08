@@ -47,7 +47,7 @@ const radiuses = [
 
 export function Features() {
   return (
-    <section className="py-32 px-6 relative overflow-hidden">
+    <section className="py-32 px-6 relative overflow-hidden" id="features">
       <BlobBackground shapeIndex={2} className="w-[900px] h-[900px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent/10" />
 
       <div className="max-w-6xl mx-auto relative z-10">

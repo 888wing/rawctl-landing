@@ -16,7 +16,7 @@ export function Comparison() {
   const savings = years * 120
 
   return (
-    <section className="py-32 px-6 bg-muted/20">
+    <section className="py-32 px-6 bg-muted/20" id="comparison">
       <div className="max-w-5xl mx-auto">
         <SectionHeader
           title="The Honest Comparison"

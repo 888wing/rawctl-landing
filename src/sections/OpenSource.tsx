@@ -16,7 +16,7 @@ const steps = [
 
 export function OpenSource() {
   return (
-    <section className="py-32 px-6 bg-[#FDFCF8]">
+    <section className="py-32 px-6 bg-[#FDFCF8]" id="opensource">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           title="Built in the Open"

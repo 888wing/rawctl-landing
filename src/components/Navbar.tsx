@@ -33,8 +33,8 @@ export function Navbar() {
             >
                 <div
                     className={`relative flex items-center justify-between rounded-full border px-6 py-3 transition-all duration-300 backdrop-blur-md ${isScrolled
-                            ? 'bg-background/80 border-primary/20 shadow-organic-lg'
-                            : 'bg-transparent border-transparent'
+                        ? 'bg-background/80 border-primary/20 shadow-organic-lg'
+                        : 'bg-transparent border-transparent'
                         }`}
                 >
                     {/* Logo */}
@@ -57,8 +57,8 @@ export function Navbar() {
 
                     {/* CTA */}
                     <div className="hidden md:block">
-                        <Button variant="primary" size="sm" className="px-6">
-                            Get Started
+                        <Button variant="primary" size="sm" className="px-6" href="https://releases.rawctl.com/rawctl-1.0.dmg">
+                            Download for Mac
                         </Button>
                     </div>
 
@@ -93,8 +93,8 @@ export function Navbar() {
                                 </a>
                             ))}
                             <div className="mt-8">
-                                <Button variant="primary" className="w-full text-lg px-12" onClick={() => setIsMobileMenuOpen(false)}>
-                                    Get Started
+                                <Button variant="primary" className="w-full text-lg px-12" onClick={() => setIsMobileMenuOpen(false)} href="https://releases.rawctl.com/rawctl-1.0.dmg">
+                                    Download for Mac
                                 </Button>
                             </div>
                         </div>

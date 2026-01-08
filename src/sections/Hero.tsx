@@ -51,7 +51,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
       >
-        <Button variant="primary" href="#download">
+        <Button variant="primary" href="https://releases.rawctl.com/rawctl-1.0.dmg">
           <Download className="w-5 h-5" />
           Download for Mac
         </Button>

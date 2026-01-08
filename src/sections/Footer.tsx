@@ -1,4 +1,3 @@
-import { Divider } from '@/components'
 
 const footerLinks = {
   product: [
@@ -22,30 +21,29 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="py-16 px-6 border-t border-gold/20">
+    <footer className="py-20 px-6 border-t border-border/40 bg-[#FDFCF8]">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-gold text-xl">◆</span>
-              <span className="font-display text-xl text-foreground tracking-art-deco">rawctl</span>
+            <div className="flex items-center gap-2 mb-6">
+              <span className="font-bold text-2xl text-foreground tracking-tight">rawctl</span>
             </div>
-            <p className="text-foreground/60 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               Your photos. Your machine. Your freedom.
             </p>
-            <p className="text-muted text-sm mt-4">
+            <p className="text-sm text-muted-foreground/80">
               A native macOS RAW editor built for photographers who value ownership.
             </p>
           </div>
 
           {/* Product */}
           <div>
-            <h4 className="font-display text-foreground tracking-wider mb-4">PRODUCT</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold text-foreground mb-6">Product</h4>
+            <ul className="space-y-4">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-muted hover:text-gold transition-colors">
+                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -55,11 +53,11 @@ export function Footer() {
 
           {/* Community */}
           <div>
-            <h4 className="font-display text-foreground tracking-wider mb-4">COMMUNITY</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold text-foreground mb-6">Community</h4>
+            <ul className="space-y-4">
               {footerLinks.community.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-muted hover:text-gold transition-colors">
+                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -69,11 +67,11 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-display text-foreground tracking-wider mb-4">LEGAL</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold text-foreground mb-6">Legal</h4>
+            <ul className="space-y-4">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-muted hover:text-gold transition-colors">
+                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -83,18 +81,15 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gold/20 pt-8">
+        <div className="border-t border-border/40 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted text-sm">
-              <span className="text-gold/50">◇</span> Built with SwiftUI + Metal <span className="text-gold/50">◇</span>
+            <p className="text-muted-foreground text-sm font-medium">
+              Built with SwiftUI + Metal
             </p>
-            <p className="text-muted text-sm">
-              © MMXXVI rawctl. Open Source.
+            <p className="text-muted-foreground text-sm">
+              © 2026 rawctl. Open Source.
             </p>
           </div>
-
-          {/* Final divider */}
-          <Divider className="mt-8" />
         </div>
       </div>
     </footer>

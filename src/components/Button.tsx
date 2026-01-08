@@ -3,7 +3,8 @@ import { ReactNode } from 'react'
 
 interface ButtonProps {
   children: ReactNode
-  variant?: 'primary' | 'solid' | 'outline'
+  variant?: 'primary' | 'outline' | 'ghost'
+  size?: 'default' | 'sm' | 'lg'
   href?: string
   target?: string
   onClick?: () => void
@@ -13,17 +14,24 @@ interface ButtonProps {
 export function Button({
   children,
   variant = 'primary',
+  size = 'default',
   href,
   target,
   onClick,
   className = ''
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center gap-2 font-display uppercase tracking-art-deco-wide transition-all duration-300'
+  const baseStyles = 'inline-flex items-center justify-center gap-2 font-bold transition-all duration-300 rounded-full'
+
+  const sizes = {
+    default: 'h-12 px-8 text-base',
+    sm: 'h-10 px-6 text-sm',
+    lg: 'h-14 px-10 text-lg',
+  }
 
   const variants = {
-    primary: 'px-8 py-4 border-2 border-gold text-gold hover:bg-gold hover:text-background hover:shadow-gold-glow-lg',
-    solid: 'px-8 py-4 bg-gold text-background hover:bg-gold-light hover:shadow-gold-glow-lg',
-    outline: 'px-6 py-3 border border-gold/50 text-gold/80 hover:border-gold hover:text-gold',
+    primary: 'bg-primary text-primary-foreground shadow-soft hover:shadow-[0_6px_24px_-4px_rgba(93,112,82,0.25)] hover:scale-105 active:scale-95',
+    outline: 'border-2 border-secondary text-secondary hover:bg-secondary/10 hover:scale-105 active:scale-95',
+    ghost: 'text-primary hover:bg-primary/10 hover:scale-105 active:scale-95',
   }
 
   const Component = href ? motion.a : motion.button
@@ -34,9 +42,8 @@ export function Button({
       target={target}
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${className}`}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      className={`${baseStyles} ${sizes[size]} ${variants[variant]} ${className}`}
+      whileTap={{ scale: 0.95 }}
     >
       {children}
     </Component>

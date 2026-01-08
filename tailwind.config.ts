@@ -8,29 +8,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#0A0A0A',
-        foreground: '#F2F0E4',
-        card: '#141414',
-        gold: {
-          DEFAULT: '#D4AF37',
-          light: '#F2E8C4',
-          dark: '#B8962E',
+        background: '#FDFCF8',
+        foreground: '#2C2C24',
+        primary: {
+          DEFAULT: '#5D7052',
+          foreground: '#F3F4F1',
         },
-        midnight: '#1E3D59',
-        muted: '#888888',
+        secondary: {
+          DEFAULT: '#C18C5D',
+          foreground: '#FFFFFF',
+        },
+        accent: {
+          DEFAULT: '#E6DCCD',
+          foreground: '#4A4A40',
+        },
+        muted: {
+          DEFAULT: '#F0EBE5',
+          foreground: '#78786C',
+        },
+        border: '#DED8CF',
+        destructive: '#A85448',
       },
       fontFamily: {
-        display: ['Marcellus', 'serif'],
-        body: ['Josefin Sans', 'sans-serif'],
+        display: ['Fraunces', 'serif'],
+        body: ['Nunito', 'sans-serif'],
       },
-      letterSpacing: {
-        'art-deco': '0.2em',
-        'art-deco-wide': '0.3em',
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '2.5rem',
       },
       boxShadow: {
-        'gold-glow': '0 0 15px rgba(212, 175, 55, 0.2)',
-        'gold-glow-lg': '0 0 30px rgba(212, 175, 55, 0.3)',
-        'gold-glow-xl': '0 0 40px rgba(212, 175, 55, 0.4)',
+        'soft': '0 4px 20px -2px rgba(93, 112, 82, 0.15)',
+        'float': '0 10px 40px -10px rgba(193, 140, 93, 0.2)',
       },
     },
   },

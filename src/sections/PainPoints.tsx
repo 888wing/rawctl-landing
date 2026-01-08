@@ -1,26 +1,26 @@
 import { motion } from 'framer-motion'
 import { HardDrive, CircleDollarSign, Unlock } from 'lucide-react'
-import { SectionHeader, Card, DiamondIcon } from '@/components'
+import { SectionHeader, Card } from '@/components'
 
 const painPoints = [
   {
-    numeral: 'I',
+    numeral: '01',
     icon: HardDrive,
-    title: 'NO CLOUD DEPENDENCY',
+    title: 'No Cloud Dependency',
     subtitle: 'Process Locally',
     description: 'Your files never leave your machine. Full GPU acceleration with Metal. Zero upload latency. Works offline.',
   },
   {
-    numeral: 'II',
+    numeral: '02',
     icon: CircleDollarSign,
-    title: 'NO SUBSCRIPTION RANSOM',
+    title: 'No Subscription Ransom',
     subtitle: 'Own Your Tools',
     description: 'Why rent software at $120/year? Core editing is free forever. Only pay for AI features when you need them.',
   },
   {
-    numeral: 'III',
+    numeral: '03',
     icon: Unlock,
-    title: 'NO LOCK-IN',
+    title: 'No Lock-in',
     subtitle: 'Open Standards',
     description: 'Standard JSON sidecars store your edits. No proprietary catalogs. Export everything, anytime, anywhere.',
   },
@@ -28,10 +28,10 @@ const painPoints = [
 
 export function PainPoints() {
   return (
-    <section className="py-32 px-6">
+    <section className="py-32 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
-          title="WHY LOCAL-FIRST?"
+          title="Why Local-First?"
           subtitle="Your Photos Deserve Better"
         />
 
@@ -44,31 +44,31 @@ export function PainPoints() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
-              <Card className="h-full text-center">
-                {/* Roman numeral in diamond */}
-                <div className="flex justify-center mb-6">
-                  <DiamondIcon size="md">
-                    <span className="font-display text-lg">{point.numeral}</span>
-                  </DiamondIcon>
+              <Card className="h-full text-center hover:bg-white/80">
+                {/* Numeral */}
+                <div className="mb-6">
+                  <span className="font-display text-4xl text-muted/30 font-bold">{point.numeral}</span>
                 </div>
 
                 {/* Icon */}
-                <div className="flex justify-center mb-4">
-                  <point.icon className="w-8 h-8 text-gold/60" />
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                    <point.icon className="w-8 h-8" />
+                  </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-display text-gold tracking-art-deco mb-2">
+                <h3 className="text-xl font-bold text-foreground mb-2">
                   {point.title}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-sm text-muted uppercase tracking-wider mb-4">
+                <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4 font-bold">
                   {point.subtitle}
                 </p>
 
                 {/* Description */}
-                <p className="text-foreground/70 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   {point.description}
                 </p>
               </Card>

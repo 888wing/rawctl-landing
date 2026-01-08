@@ -16,7 +16,7 @@ export function Hero() {
         transition={{ duration: 0.8 }}
       >
         <h1 className="text-2xl font-bold text-foreground tracking-tight">
-          rawctl
+          rawctl — Free Native macOS RAW Photo Editor
         </h1>
       </motion.div>
 
@@ -51,7 +51,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
       >
-        <Button variant="primary" href="https://releases.rawctl.com/rawctl-1.0.dmg">
+        <Button variant="primary" href="https://releases.rawctl.com/rawctl-latest.dmg">
           <Download className="w-5 h-5" />
           Download for Mac
         </Button>

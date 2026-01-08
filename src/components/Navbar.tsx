@@ -38,8 +38,9 @@ export function Navbar() {
                         }`}
                 >
                     {/* Logo */}
-                    <a href="#" className="font-display text-xl font-bold text-foreground">
-                        rawctl
+                    <a href="#" className="flex items-center gap-2">
+                        <img src="/logo.png" alt="rawctl" className="h-8 w-auto" />
+                        <span className="font-display text-xl font-bold text-foreground">rawctl</span>
                     </a>
 
                     {/* Desktop Links */}

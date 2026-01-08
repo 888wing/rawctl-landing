@@ -30,8 +30,8 @@ const features = [
   },
   {
     icon: FolderOpen,
-    title: 'RAW Support',
-    description: 'ARW, CR2, CR3, NEF, ORF, RAF, RW2, DNG, 3FR, IIQ & more.',
+    title: 'Universal RAW Support',
+    description: 'Support for Sony ARW, Canon CR3, Nikon NEF, Fujifilm RAF, Olympus ORF, Panasonic RW2, DNG & more.',
   },
 ]
 

@@ -27,6 +27,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
+              <img src="/logo.png" alt="rawctl" className="h-8 w-auto" />
               <span className="font-bold text-2xl text-foreground tracking-tight">rawctl</span>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6">

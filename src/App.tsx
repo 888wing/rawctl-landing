@@ -4,6 +4,7 @@ import {
   Features,
   Comparison,
   OpenSource,
+  ReleaseNotes,
   Pricing,
   FinalCTA,
   Footer,
@@ -20,6 +21,7 @@ export default function App() {
         <Features />
         <Comparison />
         <OpenSource />
+        <ReleaseNotes />
         <Pricing />
         <FinalCTA />
       </main>

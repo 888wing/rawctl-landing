@@ -1,17 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="rawctl - A native macOS RAW editor. Your photos, your machine, your freedom. No subscriptions, no cloud, no compromise." />
-    <title>rawctl — Your Photos. Your Machine. Your Freedom.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Marcellus&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>rawctl — Free Native macOS RAW Photo Editor | No Subscription</title>
+  <meta name="title" content="rawctl — Free Native macOS RAW Photo Editor | No Subscription" />
+  <meta name="description"
+    content="Process RAW photos on macOS with rawctl. A free, open-source, non-destructive editor. No cloud, no subscriptions. Native performance with Metal." />
+  <meta name="keywords"
+    content="macOS RAW editor, free Lightroom alternative, open source photo editor, native mac app, non-destructive editing, Sony ARW editor, Canon CR3 editor, Metal architecture" />
+  <meta name="author" content="888wing" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rawctl.com/" />
+  <meta property="og:title" content="rawctl — Free Native macOS RAW Photo Editor" />
+  <meta property="og:description"
+    content="Process RAW photos on macOS with rawctl. A free, open-source, non-destructive editor. No cloud, no subscriptions. Native performance with Metal." />
+  <meta property="og:image" content="https://rawctl.com/screenshot.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://rawctl.com/" />
+  <meta property="twitter:title" content="rawctl — Free Native macOS RAW Photo Editor" />
+  <meta property="twitter:description"
+    content="Process RAW photos on macOS with rawctl. A free, open-source, non-destructive editor. Native performance. No subscriptions." />
+  <meta property="twitter:image" content="https://rawctl.com/screenshot.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Marcellus&display=swap"
+    rel="stylesheet">
+
+  <!-- JSON-LD Structured Data for AEO -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "rawctl",
+        "headline": "Native macOS RAW Photo Editor",
+        "operatingSystem": "macOS 14.0+",
+        "applicationCategory": "PhotographyApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A native macOS RAW photo editor built with SwiftUI and Core Image, featuring true RAW processing with non-destructive editing. No subscription fees.",
+        "author": {
+          "@type": "Person",
+          "name": "888wing",
+          "url": "https://github.com/888wing"
+        },
+        "featureList": [
+          "Non-destructive RAW editing",
+          "Metal GPU acceleration",
+          "Tone Curve editor",
+          "Color Grading",
+          "No subscriptions",
+          "Local-first privacy"
+        ],
+        "downloadUrl": "https://releases.rawctl.com/rawctl-1.0.dmg",
+        "screenshot": "https://rawctl.com/screenshot.png"
+      }
+    </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

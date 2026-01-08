@@ -68,11 +68,11 @@ export function OpenSource() {
 
         {/* CTAs */}
         <div className="flex flex-wrap justify-center gap-4 mb-24">
-          <Button variant="primary" href="https://github.com/user/rawctl" target="_blank">
+          <Button variant="primary" href="https://github.com/888wing/rawctl" target="_blank">
             <Star className="w-5 h-5" />
             Star on GitHub
           </Button>
-          <Button variant="outline" href="https://github.com/user/rawctl" target="_blank">
+          <Button variant="outline" href="https://github.com/888wing/rawctl" target="_blank">
             <Code className="w-5 h-5" />
             Read the Source
           </Button>

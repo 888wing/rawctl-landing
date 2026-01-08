@@ -7,10 +7,10 @@ const footerLinks = {
     { label: 'Roadmap', href: '#' },
   ],
   community: [
-    { label: 'GitHub', href: 'https://github.com/user/rawctl' },
+    { label: 'GitHub', href: 'https://github.com/888wing/rawctl' },
     { label: 'Discussions', href: '#' },
     { label: 'Contributing', href: '#' },
-    { label: 'Twitter/X', href: '#' },
+    { label: 'Twitter/X', href: 'https://x.com/Nelson198456' },
   ],
   legal: [
     { label: 'Privacy', href: '#' },

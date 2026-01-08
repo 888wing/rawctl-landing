@@ -28,7 +28,7 @@ export function FinalCTA() {
             </p>
 
             <div className="flex flex-col items-center gap-6">
-              <Button variant="primary" href="#" className="h-16 px-12 text-lg rounded-full">
+              <Button variant="primary" href="https://releases.rawctl.com/rawctl-1.0.dmg" className="h-16 px-12 text-lg rounded-full">
                 <Download className="w-6 h-6" />
                 Download for Mac
               </Button>

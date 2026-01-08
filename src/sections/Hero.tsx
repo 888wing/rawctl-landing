@@ -55,7 +55,7 @@ export function Hero() {
           <Download className="w-5 h-5" />
           Download for Mac
         </Button>
-        <Button variant="outline" href="https://github.com/user/rawctl" target="_blank">
+        <Button variant="outline" href="https://github.com/888wing/rawctl" target="_blank">
           <Github className="w-5 h-5" />
           GitHub
         </Button>

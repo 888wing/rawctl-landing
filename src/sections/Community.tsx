@@ -92,11 +92,11 @@ export function Community() {
 
   return (
     <section className="py-32 px-6 relative overflow-hidden" id="community">
-      <BlobBackground shapeIndex={3} className="w-[600px] h-[600px] bottom-0 left-0 -translate-x-1/3 translate-y-1/3 bg-gold/5" />
+      <BlobBackground shapeIndex={3} className="w-[600px] h-[600px] bottom-0 left-0 -translate-x-1/3 translate-y-1/3 bg-primary/5" />
 
       <div className="max-w-3xl mx-auto relative z-10">
         <SectionHeader
-          title="JOIN THE COMMUNITY"
+          title="Join the Community"
           subtitle="Help shape the future of rawctl"
         />
 
@@ -110,10 +110,10 @@ export function Community() {
                 setSubmitted(null)
               }}
               className={`
-                flex items-center gap-2 px-6 py-3 font-display text-sm tracking-wider transition-all
+                flex items-center gap-2 px-6 py-3 font-body font-semibold text-sm rounded-full transition-all duration-300
                 ${activeTab === tab.id
-                  ? 'bg-gold text-background'
-                  : 'border border-gold/30 text-gold/70 hover:border-gold hover:text-gold'
+                  ? 'bg-primary text-primary-foreground shadow-soft'
+                  : 'bg-muted/30 text-muted-foreground hover:bg-muted/50 hover:text-foreground'
                 }
               `}
             >
@@ -141,11 +141,13 @@ export function Community() {
               ) : (
                 <form onSubmit={handleNewsletterSubmit} className="space-y-6">
                   <div className="text-center mb-8">
-                    <Mail className="w-12 h-12 text-gold mx-auto mb-4" />
-                    <h3 className="text-xl font-display text-foreground tracking-art-deco mb-2">
-                      STAY UPDATED
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <Mail className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                      Stay Updated
                     </h3>
-                    <p className="text-foreground/70">
+                    <p className="text-muted-foreground">
                       Get notified about new releases, features, and tips. No spam, unsubscribe anytime.
                     </p>
                   </div>
@@ -157,10 +159,10 @@ export function Community() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="your@email.com"
                       required
-                      className="flex-1 px-4 py-3 bg-background border border-gold/30 text-foreground placeholder:text-muted focus:border-gold focus:outline-none transition-colors"
+                      className="flex-1 px-4 py-3 bg-background border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                     />
                     <Button
-                      variant="solid"
+                      variant="primary"
                       className="whitespace-nowrap"
                       onClick={() => {}}
                     >
@@ -175,7 +177,7 @@ export function Community() {
                     </Button>
                   </div>
 
-                  <p className="text-xs text-muted text-center">
+                  <p className="text-xs text-muted-foreground text-center">
                     We respect your privacy. Your email will never be shared.
                   </p>
                 </form>
@@ -192,11 +194,13 @@ export function Community() {
               ) : (
                 <form onSubmit={handleFeaturesSubmit} className="space-y-6">
                   <div className="text-center mb-8">
-                    <Lightbulb className="w-12 h-12 text-gold mx-auto mb-4" />
-                    <h3 className="text-xl font-display text-foreground tracking-art-deco mb-2">
-                      WHAT DO YOU WANT NEXT?
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mx-auto mb-4">
+                      <Lightbulb className="w-8 h-8 text-secondary" />
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                      What Do You Want Next?
                     </h3>
-                    <p className="text-foreground/70">
+                    <p className="text-muted-foreground">
                       Select the features you'd like to see in rawctl. Your votes help us prioritize.
                     </p>
                   </div>
@@ -208,20 +212,20 @@ export function Community() {
                         type="button"
                         onClick={() => toggleFeature(feature.id)}
                         className={`
-                          flex items-center gap-3 p-3 text-left transition-all
+                          flex items-center gap-3 p-3 text-left transition-all rounded-xl
                           ${selectedFeatures.includes(feature.id)
-                            ? 'bg-gold/20 border-gold text-foreground'
-                            : 'bg-background border-gold/20 text-foreground/70 hover:border-gold/50'
+                            ? 'bg-primary/10 border-primary text-foreground'
+                            : 'bg-muted/20 border-transparent text-muted-foreground hover:bg-muted/40'
                           }
-                          border
+                          border-2
                         `}
                       >
                         <div className={`
-                          w-5 h-5 border flex items-center justify-center
-                          ${selectedFeatures.includes(feature.id) ? 'border-gold bg-gold' : 'border-gold/50'}
+                          w-5 h-5 rounded-md border-2 flex items-center justify-center transition-colors
+                          ${selectedFeatures.includes(feature.id) ? 'border-primary bg-primary' : 'border-border'}
                         `}>
                           {selectedFeatures.includes(feature.id) && (
-                            <Check className="w-3 h-3 text-background" />
+                            <Check className="w-3 h-3 text-primary-foreground" />
                           )}
                         </div>
                         <span className="text-sm">{feature.label}</span>
@@ -230,11 +234,11 @@ export function Community() {
                   </div>
 
                   <div className="text-center">
-                    <p className="text-sm text-muted mb-4">
+                    <p className="text-sm text-muted-foreground mb-4">
                       {selectedFeatures.length} feature{selectedFeatures.length !== 1 ? 's' : ''} selected
                     </p>
                     <Button
-                      variant="solid"
+                      variant="primary"
                       onClick={() => {}}
                       className={selectedFeatures.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}
                     >
@@ -262,11 +266,13 @@ export function Community() {
               ) : (
                 <form onSubmit={handleFeedbackSubmit} className="space-y-6">
                   <div className="text-center mb-8">
-                    <MessageSquare className="w-12 h-12 text-gold mx-auto mb-4" />
-                    <h3 className="text-xl font-display text-foreground tracking-art-deco mb-2">
-                      SHARE YOUR THOUGHTS
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <MessageSquare className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                      Share Your Thoughts
                     </h3>
-                    <p className="text-foreground/70">
+                    <p className="text-muted-foreground">
                       Found a bug? Have a suggestion? We'd love to hear from you.
                     </p>
                   </div>
@@ -274,23 +280,22 @@ export function Community() {
                   {/* Feedback type */}
                   <div className="flex justify-center gap-3">
                     {[
-                      { id: 'bug' as const, label: 'Bug Report', emoji: '🐛' },
-                      { id: 'suggestion' as const, label: 'Suggestion', emoji: '💡' },
-                      { id: 'praise' as const, label: 'Praise', emoji: '❤️' },
+                      { id: 'bug' as const, label: 'Bug Report', emoji: '' },
+                      { id: 'suggestion' as const, label: 'Suggestion', emoji: '' },
+                      { id: 'praise' as const, label: 'Praise', emoji: '' },
                     ].map((type) => (
                       <button
                         key={type.id}
                         type="button"
                         onClick={() => setFeedbackType(type.id)}
                         className={`
-                          px-4 py-2 text-sm transition-all
+                          px-4 py-2 text-sm rounded-full transition-all duration-300
                           ${feedbackType === type.id
-                            ? 'bg-gold text-background'
-                            : 'border border-gold/30 text-gold/70 hover:border-gold'
+                            ? 'bg-primary text-primary-foreground shadow-soft'
+                            : 'bg-muted/30 text-muted-foreground hover:bg-muted/50'
                           }
                         `}
                       >
-                        <span className="mr-2">{type.emoji}</span>
                         {type.label}
                       </button>
                     ))}
@@ -302,12 +307,12 @@ export function Community() {
                     placeholder="Tell us what's on your mind..."
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-background border border-gold/30 text-foreground placeholder:text-muted focus:border-gold focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
                   />
 
                   <div className="text-center">
                     <Button
-                      variant="solid"
+                      variant="primary"
                       onClick={() => {}}
                       className={!feedback.trim() ? 'opacity-50 cursor-not-allowed' : ''}
                     >
@@ -338,13 +343,13 @@ function SuccessMessage({ title, message }: { title: string; message: string }) 
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
     >
-      <div className="w-16 h-16 border-2 border-gold diamond flex items-center justify-center mx-auto mb-6">
-        <Check className="diamond-content w-8 h-8 text-gold" />
+      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+        <Check className="w-8 h-8 text-primary" />
       </div>
-      <h3 className="text-xl font-display text-foreground tracking-art-deco mb-2">
+      <h3 className="text-xl font-display font-bold text-foreground mb-2">
         {title}
       </h3>
-      <p className="text-foreground/70">{message}</p>
+      <p className="text-muted-foreground">{message}</p>
     </motion.div>
   )
 }

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Download, RefreshCw, Sparkles } from 'lucide-react'
+import { X, Download, RefreshCw, Sparkles, Check } from 'lucide-react'
 import { Button } from './Button'
 import { APP_CONFIG, STORAGE_KEYS } from '@/config'
 import { useEffect, useState } from 'react'
@@ -49,46 +49,46 @@ export function AutoUpdateModal() {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           >
-            <div className="relative max-w-md w-full bg-card border-2 border-gold p-1">
-              <div className="bg-background p-8 relative">
+            <div className="relative max-w-md w-full bg-card rounded-3xl shadow-soft-lg border border-border/50 overflow-hidden">
+              <div className="p-8 relative">
                 {/* Close button */}
                 <button
                   onClick={handleClose}
-                  className="absolute top-4 right-4 text-muted hover:text-foreground transition-colors"
+                  className="absolute top-4 right-4 w-8 h-8 rounded-full bg-muted/30 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
 
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
                   <div className="relative">
-                    <div className="w-16 h-16 border-2 border-gold diamond flex items-center justify-center">
-                      <RefreshCw className="diamond-content w-8 h-8 text-gold" />
+                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                      <RefreshCw className="w-8 h-8 text-primary" />
                     </div>
                     <motion.div
-                      className="absolute -top-1 -right-1"
+                      className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center"
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
-                      <Sparkles className="w-5 h-5 text-gold" />
+                      <Sparkles className="w-3 h-3 text-secondary" />
                     </motion.div>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-display text-foreground text-center tracking-art-deco mb-4">
-                  AUTO-UPDATE NOW AVAILABLE
+                <h3 className="text-2xl font-display font-bold text-foreground text-center mb-4">
+                  Auto-Update Now Available
                 </h3>
 
                 {/* Content */}
-                <p className="text-foreground/70 text-center mb-6">
-                  Starting from <span className="text-gold font-semibold">v{APP_CONFIG.version}</span>, rawctl includes{' '}
-                  <span className="text-gold">automatic updates</span> via Sparkle.
+                <p className="text-muted-foreground text-center mb-6">
+                  Starting from <span className="text-primary font-semibold">v{APP_CONFIG.version}</span>, rawctl includes{' '}
+                  <span className="text-primary">automatic updates</span> via Sparkle.
                 </p>
 
-                <div className="bg-gold/10 border border-gold/30 p-4 mb-6">
-                  <p className="text-sm text-foreground/80 text-center">
-                    <span className="text-gold font-semibold">Important:</span> To enable auto-updates,
+                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-6">
+                  <p className="text-sm text-muted-foreground text-center">
+                    <span className="text-primary font-semibold">Important:</span> To enable auto-updates,
                     please re-download the latest version. Future updates will be seamless!
                   </p>
                 </div>
@@ -100,8 +100,10 @@ export function AutoUpdateModal() {
                     'Never miss new features',
                     'Security patches delivered instantly',
                   ].map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-2 text-sm text-foreground/70">
-                      <span className="text-gold">◆</span>
+                    <li key={benefit} className="flex items-center gap-3 text-sm text-muted-foreground">
+                      <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-primary" />
+                      </div>
                       {benefit}
                     </li>
                   ))}
@@ -109,23 +111,17 @@ export function AutoUpdateModal() {
 
                 {/* Actions */}
                 <div className="flex flex-col gap-3">
-                  <Button variant="solid" onClick={handleDownload} className="w-full">
+                  <Button variant="primary" onClick={handleDownload} className="w-full">
                     <Download className="w-5 h-5" />
                     Download v{APP_CONFIG.version}
                   </Button>
                   <button
                     onClick={handleClose}
-                    className="text-muted hover:text-foreground text-sm transition-colors"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors py-2"
                   >
                     Maybe later
                   </button>
                 </div>
-
-                {/* Corner decorations */}
-                <div className="absolute top-2 left-2 text-gold/30">◇</div>
-                <div className="absolute top-2 right-2 text-gold/30">◇</div>
-                <div className="absolute bottom-2 left-2 text-gold/30">◇</div>
-                <div className="absolute bottom-2 right-2 text-gold/30">◇</div>
               </div>
             </div>
           </motion.div>

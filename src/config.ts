@@ -6,7 +6,7 @@ export const APP_CONFIG = {
   minOS: 'macOS 14+',
 
   // Download URLs - update these when releasing new versions
-  downloadUrl: 'https://github.com/888wing/rawctl/releases/download/v1.1.0/rawctl-1.1.0.dmg',
+  downloadUrl: 'https://releases.rawctl.com/rawctl-1.1.dmg',
   githubUrl: 'https://github.com/888wing/rawctl',
   releasesUrl: 'https://github.com/888wing/rawctl/releases',
 

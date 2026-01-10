@@ -1,13 +1,14 @@
 import { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 
-interface DiamondIconProps {
+interface OrganicIconProps {
   children: ReactNode
   size?: 'sm' | 'md' | 'lg'
   className?: string
 }
 
-export function DiamondIcon({ children, size = 'md', className = '' }: DiamondIconProps) {
+// Renamed from DiamondIcon but keeping export name for backwards compatibility
+export function DiamondIcon({ children, size = 'md', className = '' }: OrganicIconProps) {
   const sizes = {
     sm: 'w-10 h-10',
     md: 'w-14 h-14',
@@ -17,13 +18,12 @@ export function DiamondIcon({ children, size = 'md', className = '' }: DiamondIc
   return (
     <motion.div
       className={`
-        ${sizes[size]} border-2 border-gold flex items-center justify-center
-        diamond ${className}
+        ${sizes[size]} rounded-2xl bg-primary/10 flex items-center justify-center
+        ${className}
       `}
-      whileHover={{ rotate: 0 }}
-      initial={{ rotate: 45 }}
+      whileHover={{ scale: 1.05 }}
     >
-      <div className="diamond-content text-gold">
+      <div className="text-primary">
         {children}
       </div>
     </motion.div>

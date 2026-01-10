@@ -1,52 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Nunito:wght@200..900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-body antialiased selection:bg-primary/30 selection:text-foreground relative;
-  }
-
-  /* Global Noise Texture */
-  body::before {
-    content: "";
-    @apply fixed inset-0 w-full h-full pointer-events-none z-50;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
-    opacity: 0.04;
-    mix-blend-mode: multiply;
+    @apply bg-background text-foreground font-body antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-medium tracking-tight text-foreground;
+    @apply font-display uppercase tracking-art-deco;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply h-12 px-8 rounded-full bg-primary text-primary-foreground font-bold text-base
-           transition-all duration-300 hover:scale-105 active:scale-95
-           shadow-soft hover:shadow-[0_6px_24px_-4px_rgba(93,112,82,0.25)];
+    @apply px-8 py-4 border-2 border-gold text-gold font-display uppercase tracking-art-deco-wide
+           transition-all duration-300 hover:bg-gold hover:text-background hover:shadow-gold-glow-lg;
   }
 
-  .btn-outline {
-    @apply h-12 px-8 rounded-full border-2 border-secondary text-secondary font-bold text-base
-           bg-transparent transition-all duration-300 hover:scale-105 active:scale-95
-           hover:bg-secondary/10;
+  .btn-solid {
+    @apply px-8 py-4 bg-gold text-background font-display uppercase tracking-art-deco-wide
+           transition-all duration-300 hover:bg-gold-light hover:shadow-gold-glow-lg;
   }
 
-  .card-organic {
-    @apply bg-[#FEFEFA] border border-border/50 rounded-[2rem]
-           shadow-soft transition-all duration-500
-           hover:-translate-y-1 hover:shadow-float;
+  .card-deco {
+    @apply bg-card border border-gold/30 relative
+           transition-all duration-500 hover:border-gold hover:-translate-y-2 hover:shadow-gold-glow;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl text-foreground font-display text-center mb-4 leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl text-gold font-display uppercase tracking-art-deco-wide text-center;
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto leading-relaxed;
+    @apply text-lg md:text-xl text-foreground/80 text-center mt-4;
   }
 }

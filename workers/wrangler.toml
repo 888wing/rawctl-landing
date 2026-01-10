@@ -1,0 +1,17 @@
+name = "rawctl-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# R2 bucket binding
+[[r2_buckets]]
+binding = "DATA_BUCKET"
+bucket_name = "rawctl-data"
+
+# Environment variables
+[vars]
+CORS_ORIGIN = "https://rawctl.app"
+
+# Development settings
+[dev]
+port = 8787
+local_protocol = "http"

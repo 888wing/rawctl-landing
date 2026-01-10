@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { Button } from './Button'
+import { APP_CONFIG } from '@/config'
 
 const navLinks = [
     { label: 'Features', href: '#features' },
@@ -58,7 +59,7 @@ export function Navbar() {
 
                     {/* CTA */}
                     <div className="hidden md:block">
-                        <Button variant="primary" size="sm" className="px-6" href="https://releases.rawctl.com/rawctl-1.0.dmg">
+                        <Button variant="primary" className="px-6 py-2" href={APP_CONFIG.downloadUrl}>
                             Download for Mac
                         </Button>
                     </div>
@@ -94,7 +95,7 @@ export function Navbar() {
                                 </a>
                             ))}
                             <div className="mt-8">
-                                <Button variant="primary" className="w-full text-lg px-12" onClick={() => setIsMobileMenuOpen(false)} href="https://releases.rawctl.com/rawctl-1.0.dmg">
+                                <Button variant="primary" className="w-full text-lg px-12" onClick={() => setIsMobileMenuOpen(false)} href={APP_CONFIG.downloadUrl}>
                                     Download for Mac
                                 </Button>
                             </div>

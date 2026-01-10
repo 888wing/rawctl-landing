@@ -1,26 +1,26 @@
 import { motion } from 'framer-motion'
 import { HardDrive, CircleDollarSign, Unlock } from 'lucide-react'
-import { SectionHeader, Card } from '@/components'
+import { SectionHeader, Card, DiamondIcon } from '@/components'
 
 const painPoints = [
   {
-    numeral: '01',
+    numeral: 'I',
     icon: HardDrive,
-    title: 'No Cloud Dependency',
+    title: 'NO CLOUD DEPENDENCY',
     subtitle: 'Process Locally',
     description: 'Your files never leave your machine. Full GPU acceleration with Metal. Zero upload latency. Works offline.',
   },
   {
-    numeral: '02',
+    numeral: 'II',
     icon: CircleDollarSign,
-    title: 'No Subscription Ransom',
+    title: 'NO SUBSCRIPTION RANSOM',
     subtitle: 'Own Your Tools',
     description: 'Why rent software at $120/year? Core editing is free forever. Only pay for AI features when you need them.',
   },
   {
-    numeral: '03',
+    numeral: 'III',
     icon: Unlock,
-    title: 'No Lock-in',
+    title: 'NO LOCK-IN',
     subtitle: 'Open Standards',
     description: 'Standard JSON sidecars store your edits. No proprietary catalogs. Export everything, anytime, anywhere.',
   },
@@ -28,10 +28,10 @@ const painPoints = [
 
 export function PainPoints() {
   return (
-    <section className="py-32 px-6 relative">
+    <section className="py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
-          title="Why Local-First?"
+          title="WHY LOCAL-FIRST?"
           subtitle="Your Photos Deserve Better"
         />
 
@@ -44,31 +44,31 @@ export function PainPoints() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
-              <Card className="h-full text-center hover:bg-white/80">
-                {/* Numeral */}
-                <div className="mb-6">
-                  <span className="font-display text-4xl text-muted/30 font-bold">{point.numeral}</span>
+              <Card className="h-full text-center">
+                {/* Roman numeral in diamond */}
+                <div className="flex justify-center mb-6">
+                  <DiamondIcon size="md">
+                    <span className="font-display text-lg">{point.numeral}</span>
+                  </DiamondIcon>
                 </div>
 
                 {/* Icon */}
-                <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
-                    <point.icon className="w-8 h-8" />
-                  </div>
+                <div className="flex justify-center mb-4">
+                  <point.icon className="w-8 h-8 text-gold/60" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-foreground mb-2">
+                <h3 className="text-xl font-display text-gold tracking-art-deco mb-2">
                   {point.title}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4 font-bold">
+                <p className="text-sm text-muted uppercase tracking-wider mb-4">
                   {point.subtitle}
                 </p>
 
                 {/* Description */}
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed">
                   {point.description}
                 </p>
               </Card>

@@ -4,28 +4,30 @@ import {
   Features,
   Comparison,
   OpenSource,
-  ReleaseNotes,
   Pricing,
+  Community,
+  ReleaseNotes,
   FinalCTA,
   Footer,
 } from '@/sections'
-import { Navbar } from '@/components'
+import { AutoUpdateModal } from '@/components'
 
 export default function App() {
   return (
     <div className="min-h-screen bg-background bg-crosshatch">
-      <Navbar />
       <main>
         <Hero />
         <PainPoints />
         <Features />
         <Comparison />
         <OpenSource />
-        <ReleaseNotes />
         <Pricing />
+        <ReleaseNotes />
+        <Community />
         <FinalCTA />
       </main>
       <Footer />
+      <AutoUpdateModal />
     </div>
   )
 }

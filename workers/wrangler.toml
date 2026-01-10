@@ -9,7 +9,7 @@ bucket_name = "rawctl-data"
 
 # Environment variables
 [vars]
-CORS_ORIGIN = "https://rawctl.app"
+CORS_ORIGIN = "https://rawctl.com"
 
 # Development settings
 [dev]

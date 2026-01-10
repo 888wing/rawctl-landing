@@ -11,7 +11,7 @@ export const APP_CONFIG = {
   releasesUrl: 'https://github.com/888wing/rawctl/releases',
 
   // API endpoints
-  apiUrl: 'https://api.rawctl.app',
+  apiUrl: 'https://feedback.rawctl.com',
 
   // Feature flags
   showAutoUpdateNotice: true,  // Show modal about re-downloading for auto-update

@@ -14,9 +14,9 @@ const footerLinks = {
     { label: 'Twitter/X', href: '#' },
   ],
   legal: [
-    { label: 'Privacy', href: '#' },
-    { label: 'Terms', href: '#' },
-    { label: 'License (MIT)', href: '#' },
+    { label: 'Privacy', href: '/privacy' },
+    { label: 'Terms', href: '/terms' },
+    { label: 'License (MIT)', href: 'https://github.com/user/rawctl/blob/main/LICENSE' },
   ],
 }
 

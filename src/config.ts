@@ -1,12 +1,12 @@
 // App configuration - single source of truth for version and download URLs
 
 export const APP_CONFIG = {
-  version: '1.2.0',
+  version: '1.3.0',
   releaseDate: '2026-01-12',
   minOS: 'macOS 14+',
 
-  // Download URLs - update these when releasing new versions
-  downloadUrl: 'https://releases.rawctl.com/rawctl-1.2.dmg',
+  // Download URLs - using rawctl-latest.dmg so URL stays constant
+  downloadUrl: 'https://releases.rawctl.com/rawctl-latest.dmg',
   githubUrl: 'https://github.com/888wing/rawctl',
   releasesUrl: 'https://github.com/888wing/rawctl/releases',
 

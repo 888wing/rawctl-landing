@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
-import { Check, Download } from 'lucide-react'
+import { Check, Download, Leaf } from 'lucide-react'
 import { SectionHeader, Button } from '@/components'
+import { APP_CONFIG } from '@/config'
 
 const plans = [
   {
-    numeral: 'I',
-    name: 'FREE',
+    name: 'Free',
     price: '$0',
     period: 'forever',
     features: [
@@ -16,13 +16,12 @@ const plans = [
       'Offline support',
       '5 AI images/mo',
     ],
-    cta: 'DOWNLOAD',
+    cta: 'Download',
     ctaVariant: 'primary' as const,
     recommended: false,
   },
   {
-    numeral: '◆◆◆◆',
-    name: 'PRO',
+    name: 'Pro',
     price: '$9.99',
     period: '/mo',
     features: [
@@ -33,8 +32,8 @@ const plans = [
       'Early feature access',
       'Support the project',
     ],
-    cta: 'SUBSCRIBE',
-    ctaVariant: 'solid' as const,
+    cta: 'Subscribe',
+    ctaVariant: 'secondary' as const,
     recommended: true,
   },
 ]
@@ -50,8 +49,8 @@ export function Pricing() {
     <section className="py-32 px-6">
       <div className="max-w-5xl mx-auto">
         <SectionHeader
-          title="SIMPLE PRICING"
-          subtitle="Free Forever. Pay Only for AI Magic."
+          title="Simple Pricing"
+          subtitle="Free forever. Pay only for AI magic."
         />
 
         {/* Pricing Cards */}
@@ -60,10 +59,10 @@ export function Pricing() {
             <motion.div
               key={plan.name}
               className={`
-                relative bg-card border p-8
+                relative bg-card rounded-3xl p-8 transition-all duration-500
                 ${plan.recommended
-                  ? 'border-gold border-2 scale-105 shadow-gold-glow'
-                  : 'border-gold/30'
+                  ? 'border-2 border-primary scale-105 shadow-soft-lg'
+                  : 'border border-border/50 shadow-soft hover:shadow-soft-lg'
                 }
               `}
               initial={{ opacity: 0, y: 30 }}
@@ -73,49 +72,51 @@ export function Pricing() {
             >
               {/* Recommended badge */}
               {plan.recommended && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-background px-4 py-1 font-display text-sm tracking-wider">
-                  RECOMMENDED
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-5 py-1.5 rounded-full font-body text-sm font-semibold">
+                  Recommended
                 </div>
               )}
 
-              {/* Corner decorations */}
-              <div className="absolute top-3 left-3 text-gold/50">◇</div>
-              <div className="absolute top-3 right-3 text-gold/50">◇</div>
-              <div className="absolute bottom-3 left-3 text-gold/50">◇</div>
-              <div className="absolute bottom-3 right-3 text-gold/50">◇</div>
-
-              {/* Plan indicator */}
-              <div className="text-center mb-4">
-                <span className="font-display text-gold tracking-widest">{plan.numeral}</span>
-              </div>
+              {/* Decorative leaf for Pro */}
+              {plan.recommended && (
+                <div className="absolute top-4 right-4 text-primary/20">
+                  <Leaf className="w-8 h-8" />
+                </div>
+              )}
 
               {/* Plan name */}
-              <h3 className="text-2xl font-display text-foreground tracking-art-deco text-center mb-4">
+              <h3 className="text-2xl font-display font-bold text-foreground text-center mb-4">
                 {plan.name}
               </h3>
 
               {/* Price */}
               <div className="text-center mb-6">
-                <span className="text-5xl font-display text-gold">{plan.price}</span>
-                <span className="text-muted ml-2">{plan.period}</span>
+                <span className="text-5xl font-display font-bold text-primary">{plan.price}</span>
+                <span className="text-muted-foreground ml-2">{plan.period}</span>
               </div>
 
               {/* Divider */}
-              <div className="border-t border-gold/20 mb-6" />
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-6" />
 
               {/* Features */}
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-foreground/70">{feature}</span>
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {/* CTA */}
-              <Button variant={plan.ctaVariant} className="w-full" href="#download">
-                {plan.name === 'FREE' && <Download className="w-5 h-5" />}
+              <Button
+                variant={plan.ctaVariant}
+                className="w-full"
+                href={plan.name === 'Free' ? APP_CONFIG.downloadUrl : '#download'}
+              >
+                {plan.name === 'Free' && <Download className="w-5 h-5" />}
                 {plan.cta}
               </Button>
             </motion.div>
@@ -130,28 +131,28 @@ export function Pricing() {
         >
           {/* Divider with text */}
           <div className="flex items-center gap-4 mb-8">
-            <div className="flex-1 border-t border-gold/30" />
-            <span className="font-display text-muted tracking-wider">OR PAY AS YOU GO</span>
-            <div className="flex-1 border-t border-gold/30" />
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent to-border" />
+            <span className="font-display text-muted-foreground font-medium">Or Pay As You Go</span>
+            <div className="flex-1 h-px bg-gradient-to-l from-transparent to-border" />
           </div>
 
           {/* Pay as you go card */}
-          <div className="max-w-2xl mx-auto bg-card border border-gold/20 p-8">
-            <p className="text-foreground/70 text-center mb-6">
+          <div className="max-w-2xl mx-auto bg-card rounded-2xl border border-border/50 p-8 shadow-soft">
+            <p className="text-muted-foreground text-center mb-6">
               Need just a few AI generations? No problem.
             </p>
 
             <div className="space-y-3 mb-6">
               {payAsYouGo.map((tier) => (
                 <div key={tier.resolution} className="flex items-center gap-4">
-                  <span className="text-gold">◆</span>
-                  <span className="text-foreground/70 flex-1">{tier.resolution}</span>
-                  <span className="font-display text-gold tracking-wider">{tier.price}</span>
+                  <div className="w-2 h-2 rounded-full bg-secondary" />
+                  <span className="text-muted-foreground flex-1">{tier.resolution}</span>
+                  <span className="font-display font-semibold text-primary">{tier.price}</span>
                 </div>
               ))}
             </div>
 
-            <p className="text-muted text-center text-sm">
+            <p className="text-muted-foreground text-center text-sm">
               No subscription. No commitment. Pay only what you use.
             </p>
           </div>

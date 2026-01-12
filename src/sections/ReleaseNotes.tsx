@@ -1,10 +1,92 @@
 import { motion } from 'framer-motion'
-import { Wand2, Star, Thermometer, Palette, Folder, Keyboard, Zap, Crop, Shield, Maximize } from 'lucide-react'
+import { Wand2, Star, Thermometer, Palette, Folder, Keyboard, Zap, Crop, Shield, Maximize, Camera, FolderOpen, Import, MousePointer, Menu, Bug } from 'lucide-react'
 import { SectionHeader, Card, BlobBackground } from '@/components'
 import { useState } from 'react'
 
 // Release notes data - kept in sync with Swift ReleaseNotes.swift
 const releases = [
+  {
+    version: '1.2',
+    date: 'January 12, 2026',
+    title: 'Camera Profiles & Project Workflow',
+    highlights: [
+      { icon: Camera, text: 'Camera Profiles with 3 built-in looks', color: 'text-violet-500' },
+      { icon: FolderOpen, text: 'Project-based workflow with state persistence', color: 'text-blue-500' },
+      { icon: Import, text: 'Lightroom catalog import with metadata', color: 'text-orange-500' },
+    ],
+    sections: [
+      {
+        title: 'Camera Profiles',
+        icon: Camera,
+        color: 'text-violet-500',
+        items: [
+          '4-stage color pipeline: RAW Decode → Camera Profile → User Adjustments → Display',
+          'rawctl Neutral: Identity matrix with filmic neutral tone curve',
+          'rawctl Vivid: Enhanced saturation/contrast with punchy colors',
+          'rawctl Portrait: Skin-optimized matrix with soft tone curve',
+          'ProfilePicker UI in Light panel for quick profile switching',
+          'Filmic tone curves with natural highlight roll-off',
+        ],
+      },
+      {
+        title: 'Project Workflow',
+        icon: FolderOpen,
+        color: 'text-blue-500',
+        items: [
+          'Project-based organization instead of just folders',
+          'Auto-restore last project on app launch',
+          'State persistence: filter state, sort order, view mode, zoom level',
+          'Multi-directory support for single project',
+          'Security-scoped bookmarks for folder access persistence',
+          'Project status tracking: Importing → Culling → Editing → Delivered',
+        ],
+      },
+      {
+        title: 'Lightroom Import',
+        icon: Import,
+        color: 'text-orange-500',
+        items: [
+          'Import Lightroom Catalog (Cmd+Shift+I)',
+          'Ratings, flags, and color labels imported',
+          'Real-time import progress with phase indicators',
+          'SQLite3 integration for direct catalog reading',
+        ],
+      },
+      {
+        title: 'Multi-Select Actions',
+        icon: MousePointer,
+        color: 'text-green-500',
+        items: [
+          'Right-click bulk actions for rating, flag, color label',
+          'Smart selection detection showing count of affected photos',
+          'Select All and Deselect All shortcuts in menu',
+        ],
+      },
+      {
+        title: 'Enhanced Menu Bar',
+        icon: Menu,
+        color: 'text-cyan-500',
+        items: [
+          'File menu: New Project (Cmd+N), Import Lightroom Catalog',
+          'View menu: Toggle Sidebar, Toggle Inspector, Zoom controls',
+          'Photo menu: Rating, Flag, Color Label submenus',
+          'Select menu: Select Picks, Select Rejects, Invert Selection',
+        ],
+      },
+      {
+        title: 'Bug Fixes',
+        icon: Bug,
+        color: 'text-red-500',
+        items: [
+          'AI generation progress no longer gets stuck at 90%',
+          'Crop button now properly activates crop overlay',
+          'Section headers no longer have infinite dropdown animation',
+          'Persistence: Per-asset debounce prevents racing saves',
+          'Auto-save every 30 seconds prevents data loss',
+        ],
+      },
+    ],
+  },
   {
     version: '1.1',
     date: 'January 8, 2026',
@@ -150,7 +232,7 @@ const releases = [
 ]
 
 export function ReleaseNotes() {
-  const [expandedVersion, setExpandedVersion] = useState<string | null>('1.1')
+  const [expandedVersion, setExpandedVersion] = useState<string | null>('1.2')
 
   return (
     <section className="py-32 px-6 relative overflow-hidden" id="releases">

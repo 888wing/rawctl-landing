@@ -2,166 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Organic/Natural Design System - Global Styles */
-
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     @apply bg-background text-foreground font-body antialiased;
-    position: relative;
-  }
-
-  /* Paper grain texture overlay - essential for organic feel */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.03;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold text-foreground;
-  }
-
-  p {
-    @apply font-body text-foreground/80 leading-relaxed;
-  }
-
-  /* Selection color */
-  ::selection {
-    @apply bg-primary/20 text-foreground;
+    @apply font-display uppercase tracking-art-deco;
   }
 }
 
 @layer components {
-  /* Organic blob shapes */
-  .blob-shape {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  }
-
-  .blob-shape-2 {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-
-  .blob-shape-3 {
-    border-radius: 70% 30% 50% 50% / 50% 50% 30% 70%;
-  }
-
-  /* Card with organic feel */
-  .card-organic {
-    @apply bg-card border border-border/50 rounded-[2rem] shadow-soft;
-    transition: all 0.3s ease;
-  }
-
-  .card-organic:hover {
-    @apply shadow-lift -translate-y-1;
-  }
-
-  /* Button styles */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-8 h-12
-           bg-primary text-primary-foreground font-semibold
-           rounded-full shadow-soft
-           transition-all duration-300
-           hover:scale-105 hover:shadow-[0_6px_24px_-4px_rgba(93,112,82,0.25)]
-           active:scale-95;
+    @apply px-8 py-4 border-2 border-gold text-gold font-display uppercase tracking-art-deco-wide
+           transition-all duration-300 hover:bg-gold hover:text-background hover:shadow-gold-glow-lg;
   }
 
-  .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 px-8 h-12
-           border-2 border-secondary text-secondary font-semibold
-           rounded-full bg-transparent
-           transition-all duration-300
-           hover:bg-secondary hover:text-secondary-foreground
-           active:scale-95;
+  .btn-solid {
+    @apply px-8 py-4 bg-gold text-background font-display uppercase tracking-art-deco-wide
+           transition-all duration-300 hover:bg-gold-light hover:shadow-gold-glow-lg;
   }
 
-  .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 px-6 h-10
-           text-primary font-medium rounded-full
-           transition-all duration-300
-           hover:bg-primary/10;
+  .card-deco {
+    @apply bg-card border border-gold/30 relative
+           transition-all duration-500 hover:border-gold hover:-translate-y-2 hover:shadow-gold-glow;
   }
 
-  /* Section backgrounds */
-  .section-stone {
-    @apply bg-muted/30;
-  }
-
-  .section-sand {
-    @apply bg-accent/30;
-  }
-
-  .section-moss {
-    @apply bg-primary text-primary-foreground;
-  }
-
-  .section-clay {
-    @apply bg-secondary text-secondary-foreground;
-  }
-
-  /* Icon container */
-  .icon-container {
-    @apply h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center
-           transition-all duration-300;
-  }
-
-  .icon-container:hover {
-    @apply bg-primary;
-  }
-
-  .icon-container:hover svg {
-    @apply text-white;
-  }
-
-  /* Section title */
   .section-title {
-    @apply text-4xl md:text-5xl font-display font-bold text-foreground text-center;
+    @apply text-4xl md:text-5xl lg:text-6xl text-gold font-display uppercase tracking-art-deco-wide text-center;
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-muted-foreground text-center mt-4 max-w-2xl mx-auto;
-  }
-}
-
-@layer utilities {
-  /* Gradient text */
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
-  }
-
-  /* Asymmetric card radii - cycle through for variety */
-  .radius-organic-1 {
-    border-radius: 4rem 2rem 2rem 2rem;
-  }
-
-  .radius-organic-2 {
-    border-radius: 2rem 4rem 2rem 2rem;
-  }
-
-  .radius-organic-3 {
-    border-radius: 2rem 2rem 4rem 2rem;
-  }
-
-  .radius-organic-4 {
-    border-radius: 2rem 2rem 2rem 4rem;
-  }
-
-  .radius-organic-5 {
-    border-radius: 5rem 2rem 3rem 2rem;
-  }
-
-  .radius-organic-6 {
-    border-radius: 2rem 3rem 2rem 5rem;
+    @apply text-lg md:text-xl text-foreground/80 text-center mt-4;
   }
 }

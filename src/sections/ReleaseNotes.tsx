@@ -1,10 +1,65 @@
 import { motion } from 'framer-motion'
-import { Wand2, Star, Thermometer, Palette, Folder, Keyboard, Zap, Crop, Shield, Maximize, Camera, FolderOpen, Import, MousePointer, Menu, Bug } from 'lucide-react'
+import { Wand2, Star, Thermometer, Palette, Folder, Keyboard, Zap, Crop, Shield, Maximize, Camera, FolderOpen, Import, MousePointer, Menu, Bug, Layers, Type, FileText } from 'lucide-react'
 import { SectionHeader, Card, BlobBackground } from '@/components'
 import { useState } from 'react'
 
 // Release notes data - kept in sync with Swift ReleaseNotes.swift
 const releases = [
+  {
+    version: '1.3',
+    date: 'January 13, 2026',
+    title: 'Photo Layers',
+    highlights: [
+      { icon: Layers, text: 'Non-destructive text, shapes & drawings', color: 'text-purple-500' },
+      { icon: FileText, text: 'Quick-apply layer templates', color: 'text-blue-500' },
+      { icon: Type, text: 'Dynamic EXIF variables in text', color: 'text-orange-500' },
+    ],
+    sections: [
+      {
+        title: 'Photo Layers',
+        icon: Layers,
+        color: 'text-purple-500',
+        items: [
+          'Add text, shapes, and freehand drawings as non-destructive layers',
+          'Layer ordering with drag-and-drop reordering',
+          'Per-layer opacity and blend mode controls',
+          'Export with layers flattened to final image',
+        ],
+      },
+      {
+        title: 'Layer Templates',
+        icon: FileText,
+        color: 'text-blue-500',
+        items: [
+          'Quick-apply watermarks with positioning presets',
+          'Photo info strips showing camera, lens, settings',
+          'Social media caption templates for Instagram, X, etc.',
+          'Save custom templates for reuse across photos',
+        ],
+      },
+      {
+        title: 'Dynamic Variables',
+        icon: Type,
+        color: 'text-orange-500',
+        items: [
+          'Auto-insert EXIF data: {camera}, {lens}, {iso}, {aperture}, {shutter}',
+          'Date/time formatting with {date} and {time} variables',
+          'File info with {filename} and {dimensions}',
+          'Live preview as you type variable placeholders',
+        ],
+      },
+      {
+        title: 'Bug Fixes',
+        icon: Bug,
+        color: 'text-red-500',
+        items: [
+          'Fixed crop corner drag and overlay alignment issues',
+          'Instant Grid/Single view switching with no lag',
+          'Fixed DMG packaging with Applications shortcut',
+        ],
+      },
+    ],
+  },
   {
     version: '1.2',
     date: 'January 12, 2026',
@@ -232,7 +287,7 @@ const releases = [
 ]
 
 export function ReleaseNotes() {
-  const [expandedVersion, setExpandedVersion] = useState<string | null>('1.2')
+  const [expandedVersion, setExpandedVersion] = useState<string | null>('1.3')
 
   return (
     <section className="py-32 px-6 relative overflow-hidden" id="releases">

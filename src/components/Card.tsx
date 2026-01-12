@@ -5,27 +5,15 @@ interface CardProps {
   children: ReactNode
   className?: string
   hover?: boolean
-  variant?: 'default' | 'elevated' | 'outlined'
 }
 
-export function Card({
-  children,
-  className = '',
-  hover = true,
-  variant = 'default'
-}: CardProps) {
-  const variants = {
-    default: 'bg-card border border-border/50',
-    elevated: 'bg-card shadow-soft',
-    outlined: 'bg-transparent border-2 border-border',
-  }
-
+export function Card({ children, className = '', hover = true }: CardProps) {
   return (
     <motion.div
       className={`
-        ${variants[variant]}
-        rounded-2xl p-8
-        ${hover ? 'transition-all duration-500 hover:-translate-y-1 hover:shadow-soft-lg' : ''}
+        bg-card border border-gold/30 relative p-8
+        corner-deco
+        ${hover ? 'transition-all duration-500 hover:border-gold hover:-translate-y-2 hover:shadow-gold-glow' : ''}
         ${className}
       `}
       initial={{ opacity: 0, y: 20 }}

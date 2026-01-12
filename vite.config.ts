@@ -13,12 +13,4 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
   },
-  // SPA fallback for dev server
-  server: {
-    open: true,
-  },
-  // Handle SPA routes in preview
-  preview: {
-    open: true,
-  },
 })
